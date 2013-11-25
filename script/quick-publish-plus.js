@@ -185,7 +185,7 @@ jQuery(document).ready(function($) {
 
 	});
 
-	$('body').on('click', '#quick-image-publish a.submit.enable', function(e){
+	$('body').on('click', '#new-image-popup a.submit.enable', function(e){
 
 		e.preventDefault();
 
@@ -199,7 +199,7 @@ jQuery(document).ready(function($) {
 		var title     = $title.val();
 		var excerpt   = $excerpt.val();
 		var category  = $('.select-category option:selected').attr('value');
-		var url       = $('#quick-image-publish img.preview-image').attr('src');
+		var url       = $('#new-image-popup img.preview-image').attr('src');
 
 		$title.attr('disabled', 'disabled');
 		$excerpt.attr('disabled', 'disabled');
@@ -225,8 +225,8 @@ jQuery(document).ready(function($) {
 						'return_html': returnHTML,
 						'security': qp_ajax.nonce },
 				success: function(data){
-					$('#quick-image-publish span.loading').remove();
-					$('#quick-image-publish a.close').addClass('enable').trigger('click');
+					$('#new-image-popup span.loading').remove();
+					$('#new-image-popup a.close').addClass('enable').trigger('click');
 					setTimeout(function(){ $excerpt.removeAttr('disabled'); $title.removeAttr('disabled');  }, 500);
 					if(data.showPost == true){
 						$postHTML = $(data.postHTML);
@@ -244,17 +244,17 @@ jQuery(document).ready(function($) {
 
 	});
 
-	$('body').on('click', '#quick-image-publish a.submit.disable', function(e){
+	$('body').on('click', '#new-image-popup a.submit.disable', function(e){
 		e.preventDefault();
 	});
 
-	$('#quick-image-publish input.image-title').on('input', function(){
-		var title  = $('#quick-image-publish input.image-title').val();
+	$('#new-image-popup input.image-title').on('input', function(){
+		var title  = $('#new-image-popup input.image-title').val();
 
 		if (title == ''){
-			$('#quick-image-publish a.submit').removeClass('enable').addClass('disable');
+			$('#new-image-popup a.submit').removeClass('enable').addClass('disable');
 		} else {
-			$('#quick-image-publish a.submit').removeClass('disable').addClass('enable');
+			$('#new-image-popup a.submit').removeClass('disable').addClass('enable');
 		}
 	});
 
