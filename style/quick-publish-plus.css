@@ -69,6 +69,7 @@
 .new-post-popup input[type="text"]:focus,
 .new-post-popup input:focus{
 	box-shadow: none;
+	outline: none;
 }
 
 .new-post-popup a.submit{
@@ -159,6 +160,9 @@ form#new-status-popup textarea.new-status{
 	padding: 0 25px 10px 30px;
 	box-shadow: none;
 	line-height: 1.6;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 form#new-status-popup.show,
@@ -225,6 +229,9 @@ form#new-image-popup input.image-title{
 	font-weight: 700;
 	margin: 0;
 	width: 100%;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 form#new-image-popup input.image-excerpt{
@@ -234,6 +241,9 @@ form#new-image-popup input.image-excerpt{
 	border-bottom: 1px solid #E7E7E7;
 	width: 100%;
 	font-size: 12px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 form#new-image-popup .select-category{
@@ -247,15 +257,10 @@ form#new-image-popup .select-category:hover{
 	opacity: 1;
 }
 
-#wpadminbar > #wp-toolbar > #wp-admin-bar-root-default #wp-admin-bar-quick-image-publish .ab-icon{
+#wpadminbar #wp-admin-bar-quick-image-publish .ab-icon:before{
 	width: 22px;
-	background-image: url('images/drop.png');
-	background-repeat: no-repeat;
-	background-position: 0;
+	background-image: none;
 	margin-right: 0;
-}
-
-.mp6-style #wpadminbar #wp-admin-bar-quick-image-publish .ab-icon:before{
 	content: '\f161';
 	top: 3px;
 }

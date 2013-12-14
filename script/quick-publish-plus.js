@@ -101,7 +101,7 @@ jQuery(document).ready(function($) {
 		$title.addClass('loading');
 
 		var returnHTML = false;
-		if($('body').hasClass('paged') == false && $('body').hasClass('blog') == true){
+		if($('body').hasClass('blog') == true && $('body').hasClass('paged') == false){
 			var returnHTML = true;
 		}
 
@@ -126,9 +126,9 @@ jQuery(document).ready(function($) {
 						if($('.content .post:first').hasClass('sticky')){
 							setTimeout(function(){ $('.content .sticky:last').after($postHTML); }, 300);
 						} else {
-							setTimeout(function(){ $('.content').prepend($postHTML); }, 300);
+							setTimeout(function(){ $('article.post:first').before($postHTML); }, 300);
 						}
-						setTimeout(function(){ $postHTML.removeClass('hidden'); }, 500);
+						setTimeout(function(){ $postHTML.removeClass('hidden').addClass('RADI'); }, 500);
 					}
 				}
 			});
@@ -234,7 +234,7 @@ jQuery(document).ready(function($) {
 						if($('.content .post:first').hasClass('sticky')){
 							setTimeout(function(){ $('.content .sticky:last').after($postHTML); }, 300);
 						} else {
-							setTimeout(function(){ $('.content').prepend($postHTML); }, 300);
+							setTimeout(function(){ $('article.post:first').before($postHTML); }, 300);
 						}
 						setTimeout(function(){ $postHTML.removeClass('hidden'); }, 500);
 					}

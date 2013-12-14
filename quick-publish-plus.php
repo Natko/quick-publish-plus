@@ -34,10 +34,6 @@ class QuickPublishPlus{
 		add_action( 'wp_footer', array( $this, 'quick_publish_form' ));
 		add_action( 'admin_footer', array( $this, 'quick_publish_form' ));
 
-		// Add body class for MP6-based installations
-		add_filter('body_class', array( $this, 'quick_body_class') );
-		add_filter('admin_body_class', array( $this, 'quick_body_class') );
-
 	}
 
 	/////////////////////////////////////////////////////////////
@@ -243,23 +239,6 @@ class QuickPublishPlus{
 		ob_end_clean();
 
 		return $post_html;
-	}
-
-	/////////////////////////////////////////////////////////////
-	// Body Class
-	/////////////////////////////////////////////////////////////
-
-	public function quick_body_class($classes) {
-
-		$wordpress_version = substr(get_bloginfo('version'), 0, 3);
-
-		if(!is_admin() && $wordpress_version >= '3.8'){
-			$classes[] = 'mp6-style';
-		} else if (is_admin() && $wordpress_version >= '3.8'){
-			$classes = 'mp6-style';
-		}
-
-		return $classes;
 	}
 
 }
